@@ -10,13 +10,7 @@ const Hero = () => {
 
   const getHero = async () => {
     try {
-      const data = await fetch(`${url}/${token}/search/${nameHero}`, {
-        method: "GET",
-        headers: new Headers({
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        }),
-      });
+      const data = await fetch(`${url}/${token}/search/${nameHero}`);
       const { results } = await data.json();
       setHeros(results);
     } catch (error) {
