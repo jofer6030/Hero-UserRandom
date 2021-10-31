@@ -30,7 +30,9 @@ const Hero = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    getHero();
+    if (nameHero !== "") {
+      getHero();
+    }
     setnameHero("");
   };
 
@@ -46,11 +48,12 @@ const Hero = () => {
           value={nameHero}
           autoComplete="off"
         />
+        {nameHero === "" && <p>El campo no puede ir vacío</p>}
         <button>Buscar Hero</button>
       </form>
 
       <div className="info">
-        {heros.length > 0 ? (
+        {heros ? (
           heros.map((hero) => (
             <div key={hero.id} className="card">
               <h2>{hero.name}</h2>
@@ -99,7 +102,7 @@ const Hero = () => {
             </div>
           ))
         ) : (
-          <h3>Error al cargar o no existe heroe con es nombre</h3>
+          <h3>Error al cargar o no existe heroe con ese nombre</h3>
         )}
       </div>
     </div>
