@@ -1,3 +1,3 @@
 # Netlify link
 
-https://hero-username.netlify.app/
+https://hero-userrandom.netlify.app/
